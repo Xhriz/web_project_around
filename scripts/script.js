@@ -1,15 +1,15 @@
-let popup=document.querySelector(".popup");
-let closePopup=popup.querySelector(".popup__close");
-let profile=document.querySelector(".profile");
-let editPopup=profile.querySelector(".profile__button-edit");
-let profileName=profile.querySelector(".profile__name");
-let profileDescription=profile.querySelector(".profile__description");
-let popupName=popup.querySelector(".popup__input_name");
-let popupDescription=popup.querySelector(".popup__input_description");
-let buttonSave=popup.querySelector(".popup__button");
+const popup=document.querySelector(".popup");
+const closePopup=popup.querySelector(".popup__close");
+const profile=document.querySelector(".profile");
+const editPopup=profile.querySelector(".profile__button-edit");
+const profileName=profile.querySelector(".profile__name");
+const profileDescription=profile.querySelector(".profile__description");
+const popupName=popup.querySelector(".popup__input_name");
+const popupDescription=popup.querySelector(".popup__input_description");
+const buttonSave=popup.querySelector(".popup__button");
 
-let elements=document.querySelector(".elements");
-let buttonLike=elements.querySelectorAll(".elements__like");
+const elements=document.querySelector(".elements");
+const buttonLike=elements.querySelectorAll(".elements__like");
 
 function editForm(){
  popup.classList.toggle("popup_opened");

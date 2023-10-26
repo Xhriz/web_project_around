@@ -20,12 +20,18 @@
   font-size: 42px;
   font-weight: 500;
   margin-bottom: 0;
+  text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
 }
 .profile__description{
   color: #FFF;
 font-size: 18px;
 font-weight: 400;
 margin-top: 14px;
+text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
 }
 .profile__button-edit{
 object-fit: contain;
@@ -73,8 +79,9 @@ grid-column-gap: 10px;
 font-size: 22px;
   }
   .profile__description{
-font-size: 14px;
-margin-top: 30px;
+    font-size: 14px;
+    margin-top: 20px;
+    height: 50px;
   }
   .profile__button-edit{
     margin-top: 20px;
