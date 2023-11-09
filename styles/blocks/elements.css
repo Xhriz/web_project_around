@@ -51,7 +51,7 @@ width: 100%;
   padding: 0;
 }
 .elements__button-like_click {
-  fill: black;
+  background-image:url(../../images/likeactive.png);
   opacity: 100%;
   transition: 0.2s;
 }
