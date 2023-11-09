@@ -15,10 +15,13 @@
  line-height: 34px;
  overflow: hidden;
  list-style: none;
+ position: relative;
+ cursor: pointer;
 }
 .elements__image{
-  width: 100%;
-  object-fit: contain;
+width: 100%;
+  object-fit: cover;
+  height: 350px;
 }
 .elements__text{
   display: flex;
@@ -37,18 +40,41 @@
  overflow: hidden;
 }
 .elements__like{
-  object-fit: contain;
+  object-fit: cover;
   position: absolute;
   bottom: 32px;
   right: 2px;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.elements__button-like_click {
+  fill: black;
+  opacity: 100%;
+  transition: 0.2s;
 }
 .elements__like:hover{
     opacity: 0.5;
+}
+.elements__trash{
+  padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
+}
+.elements__trash:hover{
+  opacity: 0.5;
 }
 @media screen and (max-width:740px) {
   .elements__title{
     font-size: 18px;
+  }
+  .elements__image{
+    height: 300px;
   }
 }
 
@@ -60,4 +86,5 @@
 .elements__title{
   font-size: 24px;
 }
+
 }

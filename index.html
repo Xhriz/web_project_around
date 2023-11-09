@@ -22,6 +22,16 @@
     </form>
   </section>
 
+  <section class="popup-add">
+    <p class="popup__close-add">X</p>
+    <form class="popup__container">
+      <h2 class="popup__title">Novo local</h2>
+     <input type="text" placeholder="Título" class="popup__input popup-add__input_title">
+     <input type="url" placeholder="Link da imagem"  class="popup__input popup-add__input_link">
+     <button class="popup__button">Criar</button>
+    </form>
+  </section>
+
   <section class="profile">
     <img class="profile__photo" src="./images/perfil.jpg" alt="Foto de perfil do usuário">
     <div class="profile__text">
@@ -34,55 +44,28 @@
 
   <section class="elements">
     <ul class="elements__list">
+      <template id="template-card">
     <li class="elements__card">
-      <img class="elements__image" src="./images/valedeyosemite.png" alt="Imagem de uma floresta de pinheiros e um rio, o Vale de Yosemite.">
+      <img class="elements__trash" src="./images/Trash.png" alt="botao de excluir no formato de uma lixeira">
+     <img class="elements__image" src="" alt="">
       <div class="elements__text">
-      <h2 class="elements__title">Vale de Yosemite</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
+      <h2 class="elements__title"></h2>
+      <button type="button" class="elements__like">
+        <svg class="elements__button-like " width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18.8368 2.20277L18.8394 2.20544C20.7188 4.13299 20.7225 7.31163 18.8368 9.26495L10.4812 17.9202L2.14988 9.29C1.25494 8.34225 0.75 7.08483 0.75 5.74496C0.75 4.39717 1.23873 3.14375 2.14714 2.20276L2.14715 2.20277L2.14972 2.20008C3.99577 0.268703 7.0174 0.264567 8.88883 2.22231L8.88883 2.22231L8.89139 2.22497L9.94166 3.3129L10.4867 3.87752L11.0261 3.30743L12.0736 2.20014C13.9438 0.265745 16.9677 0.266621 18.8368 2.20277Z" stroke="black" stroke-width="1.5"/>
+    </svg></button>
     </div>
   </li>
-
-    <li class="elements__card">
-      <img class="elements__image" src="./images/lagolouise.png" alt="Imagem de uma lagoa entre as montanhas, o Lago Louise">
-      <div class="elements__text">
-      <h2 class="elements__title">Lago Louise</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
-    </div>
-  </li>
-
-    <li class="elements__card">
-      <img class="elements__image" src="./images/montanhascarecas.png" alt="Imagem do nascer do sol sobre montanhas, nas Montanhas Carecas">
-      <div class="elements__text">
-      <h2 class="elements__title">Montanhas Carecas</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
-    </div>
-  </li>
-
-    <li class="elements__card">
-      <img class="elements__image" src="./images/latemar.png" alt="Imagem de um céu estrelado sobre uma montanha com neve, o Latemar">
-      <div class="elements__text">
-      <h2 class="elements__title">Latemar</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
-    </div>
-  </li>
-
-    <li class="elements__card">
-      <img class="elements__image" src="./images/vanoisenationalpark.png" alt="Imagem de montanhas com gelo e um lago abaixo, o Vanoise National Park">
-      <div class="elements__text">
-      <h2 class="elements__title">Vanoise National Park</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
-    </div>
-  </li>
-
-    <li class="elements__card">
-      <img class="elements__image" src="./images/lagodibraies.png" alt="Imagem de canoas sobre o lago Lago di Braies">
-      <div class="elements__text">
-      <h2 class="elements__title">Lago di Braies</h2>
-      <img class="elements__like" src="./images/like.png" alt="um botao de dar like no formato de coraçao">
-    </div>
-  </li>
+</template>
   </ul>
   </section>
+  <section class="popup-image">
+    <p class="popup__close-zoom">X</p>
+    <div class="popup-image__container">
+        <img class="popup__img-zoom" src="" alt="">
+        <p class="popup__name"></p>
+    </div>
+</section>
 </main>
 <footer class="footer">
 <p class="footer__text">© 2023 Around The U.S.</p>
