@@ -8,7 +8,7 @@ const popupName=popup.querySelector(".popup__input_name");
 const popupDescription=popup.querySelector(".popup__input_description");
 const buttonSave=popup.querySelector(".popup__button");
 const buttonAdd=profile.querySelector(".profile__button-add");
-const popupAdd=document.querySelector(".popup-add");
+const popupAdd=document.querySelector(".popup__add");
 const closePopupAdd=popupAdd.querySelector(".popup__close-add");
 
 const elements=document.querySelector(".elements");
