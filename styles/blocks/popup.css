@@ -101,7 +101,7 @@ visibility: hidden;
   text-align: center;
   margin:0 auto;
  position: relative;
- top: 25%;
+ top: 15%;
 }
 .popup-image__name{
   color: white;
@@ -145,7 +145,7 @@ visibility: hidden;
   font-size: 40px;
   position: absolute;
   left: 67%;
-  top: 110px;
+  top: 35px;
 }
 .popup-image__close:hover{
   opacity: 0.7;
