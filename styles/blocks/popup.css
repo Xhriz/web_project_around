@@ -150,7 +150,7 @@ visibility: hidden;
 }
 .popup__button_desactive{
   background-color: white;
-  color: rgb(128, 128, 128, 0.5);;
+  color: rgb(128, 128, 128, 0.5);
   border:2px solid rgb(128, 128, 128, 0.5);
   padding: 15px 120px;
   margin-top: 40px;
