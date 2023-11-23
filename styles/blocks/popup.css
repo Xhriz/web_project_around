@@ -17,6 +17,7 @@
   margin:0 auto;
  position: relative;
  top: 25%;
+ padding-bottom: 380px;
 }
 .popup__title {
 font-size: 24px;
@@ -28,9 +29,11 @@ margin-right: 200px;
 .popup__input{
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  margin-top: 30px;
+  margin-top: 20px;
   width: 80%;
   height: 40px;
+  outline: none;
+  margin-bottom: 0;
 }
 .popup__button{
    background-color: #000;
@@ -65,6 +68,7 @@ visibility: hidden;
   margin:0 auto;
  position: relative;
  top: 25%;
+ padding-bottom: 380px;
 }
 .popup-add__button{
   background-color: #000;
@@ -79,13 +83,6 @@ visibility: hidden;
   line-height: 29px;
   padding-top: 30px;
   margin-right: 200px;
-}
-.popup-add__input{
-  border: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  margin-top: 30px;
-  width: 80%;
-  height: 40px;
 }
 .popup-image{
   position: fixed;
@@ -102,13 +99,13 @@ visibility: hidden;
   margin:0 auto;
  position: relative;
  top: 15%;
+ width: 600px;
+ overflow: hidden;
 }
 .popup-image__name{
   color: white;
   font-size: 12px;
   font-weight: 400;
-  position:relative;
-  right: 170px;
 }
 .popup-image__zoom {
   height: 540px;
@@ -151,7 +148,29 @@ visibility: hidden;
   opacity: 0.7;
   cursor: pointer;
 }
-
+.popup__button_desactive{
+  background-color: white;
+  color: rgb(128, 128, 128, 0.5);;
+  border:2px solid rgb(128, 128, 128, 0.5);
+  padding: 15px 120px;
+  margin-top: 40px;
+}
+.popup__input-error{
+  border: none;
+  border-bottom: 2px solid red;
+  margin-top: 30px;
+  width: 80%;
+  height: 40px;
+}
+.popup__message-error_active{
+  color: #F00;
+font-size: 12px;
+font-weight: 500;
+display: block;
+width: 80%;
+margin: 5px auto 0;
+text-align: left;
+}
 
 @media screen and (max-width:1000px) {
   .popup__close{
@@ -163,11 +182,15 @@ visibility: hidden;
   .popup-image__zoom{
     width: 450px;
   }
+  .popup-image__container{
+    width: 400px;
+  }
 }
 @media screen and (max-width:500px) {
   .popup__container{
     width: 282px;
     height: 322px;
+    padding-bottom: 430px;
   }
   .popup__title{
     margin-right: 100px;
@@ -181,6 +204,7 @@ visibility: hidden;
   .popup-add__container{
     width: 282px;
     height: 322px;
+    padding-bottom: 430px;
   }
   .popup-add__title{
     margin-right: 100px;
@@ -190,6 +214,9 @@ visibility: hidden;
   }
   .popup-add__close{
     left: 85%;
+  }
+  .popup-image__container{
+    width: 240px;
   }
   .popup-image__zoom{
     width: 240px;

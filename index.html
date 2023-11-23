@@ -14,21 +14,25 @@
 
   <section class="popup">
     <p class="popup__close">X</p>
-    <form class="popup__container">
+    <form class=" form popup__container" novalidate>
       <h2 class="popup__title">Editar perfil</h2>
-     <input type="text" placeholder="Nome" class="popup__input popup__input_name">
-     <input type="text" placeholder="Sobre mim"  class="popup__input popup__input_description">
+     <input type="text" placeholder="Nome" id="name-input" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
+     <span class="popup__message-error name-input-error"></span>
+     <input type="text" placeholder="Sobre mim" id="text-input" class="popup__input popup__input_description" minlength="2" maxlength="200" required>
+     <span class="popup__message-error text-input-error"></span>
      <button class="popup__button">Salvar</button>
     </form>
   </section>
 
   <section class="popup-add">
     <p class="popup-add__close">X</p>
-    <form class="popup-add__container">
+    <form class="form popup-add__container" novalidate>
       <h2 class="popup-add__title">Novo local</h2>
-     <input type="text" placeholder="Título" class="popup-add__input popup-add__input-title">
-     <input type="url" placeholder="Link da imagem"  class=" popup-add__input popup-add__input-link">
-     <button class="popup-add__button">Criar</button>
+     <input type="text" placeholder="Título" id="title-input" class="popup__input popup-add__input-title" minlength="2" maxlength="30"required>
+     <span class="popup__message-error title-input-error"></span>
+     <input type="url" placeholder="Link da imagem" id="link-input" class="popup__input popup-add__input-link" required>
+     <span class="popup__message-error link-input-error"></span>
+     <button class="popup__button popup-add__button">Criar</button>
     </form>
   </section>
 
@@ -63,12 +67,13 @@
     <div class="popup-image__container">
         <img class="popup-image__zoom" alt="">
         <p class="popup-image__name"></p>
-    </div>
+</div>
 </section>
 </main>
 <footer class="footer">
 <p class="footer__text">© 2023 Around The U.S.</p>
 </footer>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
