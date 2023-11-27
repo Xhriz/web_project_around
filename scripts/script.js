@@ -134,7 +134,7 @@ function addImage(){
   inputTitle.value = "";
   inputImage.value = "";
   const buttonElement=popupAdd.querySelector(".popup__button");
-  buttonElement.classList.add("popup__button_desactive");
+  buttonElement.classList.add("popup__button_inactive");
    buttonElement.disabled=true;
 }
 
