@@ -1,0 +1,37 @@
+{
+  "name": "web_project_around",
+  "version": "1.0.0",
+  "description": "**Descriçao e funcionalidade:** Esse projeto é um site responsivo que utiliza tecnologias como HTML, CSS e Javascript, nesse site alem de ser responsivo, é como se fosse um tipo de rede social onde o usuário pode modificar o perfil de acordo com o desejado, nesse site tem funções como, adicionar imagem que quiser no site e colocar um nome na imagem, o usuario pode excluir a mesma quando quiser e curtir tambem, é possivel mudar o nome e colocar uma profissao na parte do perfil, com atualizaçao em tempo real, Isso é feito com validaçao de formulario que permite com que o usuario possa ver em tempo real se há algum erro ou invalidaçao desse formulario, com um estilo proprio do site. Esse site foi estruturado com  a metodologia BEM que deixa o codigo limpo e organizado. Na nova atualização o codigo foi refatorado para tornar os cartoes e a validaçao do formulario escritos como POO, ou seja, estes elementos foram programados de acordo com a Programaçao orientada a objetos, para deixar o codigo mais limpo e organizado.\r **Link do site:** https://xhriz.github.io/web_project_around/",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xhriz/web_project_around.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xhriz/web_project_around/issues"
+  },
+  "homepage": "https://github.com/Xhriz/web_project_around#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.7",
+    "autoprefixer": "^10.4.16",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.8.1",
+    "cssnano": "^6.0.3",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "core-js": "^3.35.0"
+  }
+}
