@@ -12,14 +12,14 @@ export default class PopupWithForm extends Popup{
     const values = {};
 
    inputs.forEach((input) => {
-      values[input.name] = input.value;
+     values[input.name] = input.value;
     });
 
     return values;
   }
 
-  setInputValues(values) {
-    const inputs = this._formElement.querySelectorAll(".popup__form-input");
+  _setInputValues(values) {
+    const inputs = this._formElement.querySelectorAll(".popup__input");
     inputs.forEach((input) => {
       input.value = values[input.name];
     });
@@ -32,6 +32,7 @@ export default class PopupWithForm extends Popup{
       evt.preventDefault();
       this._callback(this._getInputValues());
       this.close();
+
     });
   }
 

@@ -6,7 +6,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../components/utils.js";
-import {popupName, popupDescription, popup, popupAdd, profileDescription, profileName, buttonAdd, imgZoom, popupImgName, editPopup, selectors} from "../components/utils.js";
+import {popupName, popupDescription, popup, popupAdd, buttonAdd, profileName, profileDescription, imgZoom, popupImgName, editPopup, selectors} from "../components/utils.js";
 
 const popupWithImage= new PopupWithImage(".popup-image", imgZoom, popupImgName);
 popupWithImage.setEventListeners();
@@ -26,13 +26,13 @@ const userInfo = new UserInfo(selectors);
 
 const popupProfile = new PopupWithForm({
   popupSelector: ".popup",
-  callBack: ({name, about }) =>
-  {
-    userInfo.setUserInfo(name,about);
+  callBack: () =>{
+
+   userInfo.setUserInfo();
+
   },
 });
 popupProfile.setEventListeners();
-
 
 editPopup.addEventListener("click", () => {
   const { name, about } = userInfo.getUserInfo();
@@ -40,6 +40,7 @@ editPopup.addEventListener("click", () => {
   popupDescription.value=about;
   popupProfile.open();
 });
+
 
 const popupAddForm = new PopupWithForm({
   popupSelector: ".popup-add",
