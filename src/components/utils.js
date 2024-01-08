@@ -11,6 +11,7 @@ export const popupImage=document.querySelector(".popup-image");
 export const elementImg= popupImage.querySelector(".elements__image");
 export const imgZoom=popupImage.querySelector(".popup-image__zoom");
 export const popupImgName=popupImage.querySelector(".popup-image__name");
+export const popupButtonAdd=popupAdd.querySelector(".popup-add__button");
 
 export const selectors={
  nameSelector: ".profile__name",

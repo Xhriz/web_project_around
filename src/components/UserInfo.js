@@ -1,5 +1,3 @@
-import { popupDescription, popupName } from "./utils";
-
 export default class UserInfo{
   constructor({nameSelector, aboutSelector}, ){
     this._nameElement = document.querySelector(nameSelector);
@@ -13,9 +11,9 @@ export default class UserInfo{
     }
   }
 
-  setUserInfo() {
-    this._nameElement.textContent=popupName.value;
-    this._aboutElement.textContent= popupDescription.value;
+  setUserInfo(name,about) {
+    this._nameElement.textContent=name.value;
+    this._aboutElement.textContent= about.value;
   }
 
 }

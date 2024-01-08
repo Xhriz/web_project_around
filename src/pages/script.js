@@ -6,7 +6,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../components/utils.js";
-import {popupName, popupDescription, popup, popupAdd, buttonAdd, profileName, profileDescription, imgZoom, popupImgName, editPopup, selectors} from "../components/utils.js";
+import {popupName, popupDescription, popup, popupAdd, buttonAdd, popupButtonAdd, imgZoom, popupImgName, editPopup, selectors} from "../components/utils.js";
 
 const popupWithImage= new PopupWithImage(".popup-image", imgZoom, popupImgName);
 popupWithImage.setEventListeners();
@@ -28,7 +28,7 @@ const popupProfile = new PopupWithForm({
   popupSelector: ".popup",
   callBack: () =>{
 
-   userInfo.setUserInfo();
+   userInfo.setUserInfo(popupName, popupDescription);
 
   },
 });
@@ -49,6 +49,10 @@ const popupAddForm = new PopupWithForm({
       text: document.querySelector(".popup-add__input-title").value,
       image: document.querySelector(".popup-add__input-link").value,
     };
+    if(dataCard.text || dataCard.image === ""){
+      popupButtonAdd.classList.add("popup__button_inactive");
+      popupButtonAdd.disabled=true;
+    }
     const card = new Card(dataCard, "#template-card", popupWithImage);
     const cardElement = card.generateCard();
     document.querySelector(".elements__list").prepend(cardElement);
