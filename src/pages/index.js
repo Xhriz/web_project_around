@@ -6,19 +6,37 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../components/utils.js";
-import {popupName, popupDescription, popup, popupAdd, buttonAdd, popupButtonAdd, imgZoom, popupImgName, editPopup, selectors} from "../components/utils.js";
+import {
+  popupName,
+  popupDescription,
+  popup,
+  popupAdd,
+  buttonAdd,
+  popupButtonAdd,
+  imgZoom,
+  popupImgName,
+  editPopup,
+  selectors,
+} from "../components/utils.js";
 
-const popupWithImage= new PopupWithImage(".popup-image", imgZoom, popupImgName);
+const popupWithImage = new PopupWithImage(
+  ".popup-image",
+  imgZoom,
+  popupImgName
+);
 popupWithImage.setEventListeners();
 
-const cardList= new Section({
-  items: initialCards,
-  renderer: (item)=>{
-    const card= new Card(item, "#template-card", popupWithImage);
-    const cardElement= card.generateCard();
-    cardList.addItem(cardElement);
-  }
-}, ".elements__list");
+const cardList = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, "#template-card", popupWithImage);
+      const cardElement = card.generateCard();
+      cardList.addItem(cardElement);
+    },
+  },
+  ".elements__list"
+);
 
 cardList.renderer();
 
@@ -26,21 +44,18 @@ const userInfo = new UserInfo(selectors);
 
 const popupProfile = new PopupWithForm({
   popupSelector: ".popup",
-  callBack: () =>{
-
-   userInfo.setUserInfo(popupName, popupDescription);
-
+  callBack: () => {
+    userInfo.setUserInfo(popupName, popupDescription);
   },
 });
 popupProfile.setEventListeners();
 
 editPopup.addEventListener("click", () => {
   const { name, about } = userInfo.getUserInfo();
-  popupName.value=name;
-  popupDescription.value=about;
+  popupName.value = name;
+  popupDescription.value = about;
   popupProfile.open();
 });
-
 
 const popupAddForm = new PopupWithForm({
   popupSelector: ".popup-add",
@@ -49,9 +64,9 @@ const popupAddForm = new PopupWithForm({
       text: document.querySelector(".popup-add__input-title").value,
       image: document.querySelector(".popup-add__input-link").value,
     };
-    if(dataCard.text || dataCard.image === ""){
+    if (dataCard.text || dataCard.image === "") {
       popupButtonAdd.classList.add("popup__button_inactive");
-      popupButtonAdd.disabled=true;
+      popupButtonAdd.disabled = true;
     }
     const card = new Card(dataCard, "#template-card", popupWithImage);
     const cardElement = card.generateCard();
@@ -63,17 +78,17 @@ buttonAdd.addEventListener("click", () => {
   popupAddForm.open();
 });
 
-const config=({
+const config = {
   formSelector: ".form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__button_inactive",
   inputErrorClass: "popup__input-error",
-  errorClass: "popup__message-error_active"
-});
+  errorClass: "popup__message-error_active",
+};
 
-const form= new FormValidator(config, popup);
+const form = new FormValidator(config, popup);
 form.enableValidation();
 
-const formAdd= new FormValidator(config, popupAdd);
+const formAdd = new FormValidator(config, popupAdd);
 formAdd.enableValidation();

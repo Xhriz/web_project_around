@@ -1,8 +1,8 @@
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   margin: 0;
   background-color: black;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }

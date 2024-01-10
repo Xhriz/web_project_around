@@ -14,7 +14,7 @@
   <section class="popup">
     <button class="popup__button-close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class=" form popup__container" novalidate>
-      <h2 class="popup__title">Editar perfil</h2>
+     <h2 class="popup__title">Editar perfil</h2>
      <input type="text" placeholder="Nome" id="name-input" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
      <span class="popup__message-error name-input-error"></span>
      <input type="text" placeholder="Sobre mim" id="text-input" class="popup__input popup__input_description" minlength="2" maxlength="200" required>
@@ -26,7 +26,7 @@
   <section class="popup popup-add">
     <button class="popup__button-close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class="form popup-add__container" novalidate>
-      <h2 class="popup-add__title">Novo local</h2>
+     <h2 class="popup-add__title">Novo local</h2>
      <input type="text" placeholder="Título" id="title-input" class="popup-add__input-title popup__input" minlength="2" maxlength="30" required>
      <span class="popup-add__error popup__message-error title-input-error"></span>
      <input type="url" placeholder="Link da imagem" id="link-input" class="popup-add__input-link popup__input" required>
@@ -47,9 +47,9 @@
 
   <section class="elements">
     <ul class="elements__list">
-      <template id="template-card">
+    <template id="template-card">
     <li class="elements__card">
-      <img class="elements__trash" src="<%=require('./images/Trash.png')%>" alt="botao de excluir no formato de uma lixeira">
+     <img class="elements__trash" src="<%=require('./images/Trash.png')%>" alt="botao de excluir no formato de uma lixeira">
      <img class="elements__image" src="#" alt="imagem do card">
       <div class="elements__text">
       <h2 class="elements__title"></h2>
