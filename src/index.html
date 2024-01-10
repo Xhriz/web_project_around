@@ -12,7 +12,7 @@
 <main class="content">
 
   <section class="popup">
-    <p class="popup__close">X</p>
+    <button class="button__close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class=" form popup__container" novalidate>
       <h2 class="popup__title">Editar perfil</h2>
      <input type="text" placeholder="Nome" id="name-input" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
@@ -24,7 +24,7 @@
   </section>
 
   <section class="popup popup-add">
-    <p class="popup__close popup-add__close">X</p>
+    <button class="button__close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class="form popup-add__container" novalidate>
       <h2 class="popup-add__title">Novo local</h2>
      <input type="text" placeholder="Título" id="title-input" class="popup-add__input-title popup__input" minlength="2" maxlength="30" required>
@@ -62,15 +62,15 @@
 </ul>
   </section>
   <section class="popup popup-image">
-    <p class="popup-image__close popup__close ">X</p>
+    <button class="button__close"><img class="popup__close popup__close-image" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <div class="popup-image__container">
-        <img class="popup-image__zoom" alt="">
-        <p class="popup-image__name"></p>
+      <img class="popup-image__zoom" alt="">
+      <p class="popup-image__name"></p>
 </div>
 </section>
 </main>
 <footer class="footer">
-<p class="footer__text">© 2023 Around The U.S.</p>
+<p class="footer__text">&#169 2023 Around The U.S.</p>
 </footer>
 </body>
 </html>
