@@ -12,7 +12,7 @@
 <main class="content">
 
   <section class="popup">
-    <button class="button__close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
+    <button class="popup__button-close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class=" form popup__container" novalidate>
       <h2 class="popup__title">Editar perfil</h2>
      <input type="text" placeholder="Nome" id="name-input" class="popup__input popup__input_name" minlength="2" maxlength="40" required>
@@ -24,7 +24,7 @@
   </section>
 
   <section class="popup popup-add">
-    <button class="button__close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
+    <button class="popup__button-close"><img class="popup__close" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <form class="form popup-add__container" novalidate>
       <h2 class="popup-add__title">Novo local</h2>
      <input type="text" placeholder="Título" id="title-input" class="popup-add__input-title popup__input" minlength="2" maxlength="30" required>
@@ -62,7 +62,7 @@
 </ul>
   </section>
   <section class="popup popup-image">
-    <button class="button__close"><img class="popup__close popup__close-image" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
+    <button class="popup__button-close"><img class="popup__close popup__close-image" src="<%=require('./images/closebutton.png')%>" alt="botao de fechar popup"></button>
     <div class="popup-image__container">
       <img class="popup-image__zoom" alt="">
       <p class="popup-image__name"></p>

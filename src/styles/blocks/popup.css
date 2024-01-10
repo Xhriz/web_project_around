@@ -156,7 +156,7 @@ margin: 5px auto 0;
 text-align: left;
 }
 
-.button__close{
+.popup__button-close{
 background-color: #000;
 border: none;
 }
