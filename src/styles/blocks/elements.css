@@ -42,7 +42,7 @@
 .elements__like {
   object-fit: cover;
   position: absolute;
-  bottom: 28px;
+  bottom: 35px;
   right: 10px;
   cursor: pointer;
   background-color: white;
@@ -58,6 +58,11 @@
 .elements__like:hover {
   opacity: 0.5;
 }
+.elements__number-likes {
+  position: absolute;
+  top: 30px;
+  right: 16px;
+}
 .elements__trash {
   padding: 0;
   margin: 0;
@@ -65,6 +70,9 @@
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+.elements__trash-hidden {
+  visibility: hidden;
 }
 .elements__trash:hover {
   opacity: 0.5;

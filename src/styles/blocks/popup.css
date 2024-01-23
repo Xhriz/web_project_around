@@ -43,11 +43,9 @@
   margin-top: 40px;
 }
 .popup__close {
-  color: white;
-  font-size: 40px;
   position: absolute;
   left: 70%;
-  top: 180px;
+  top: 160px;
 }
 .popup-add {
   position: fixed;
@@ -98,14 +96,14 @@
   text-align: center;
   margin: 0 auto;
   position: relative;
-  top: 15%;
+  top: 11%;
   width: 600px;
   overflow: hidden;
 }
 .popup__close-image {
   position: absolute;
-  left: 70%;
-  top: 80px;
+  left: 75%;
+  top: 60px;
 }
 .popup-image__name {
   color: white;
@@ -160,6 +158,39 @@
   background-color: #000;
   border: none;
 }
+.popup-photo-profile__container {
+  background-color: white;
+  width: 430px;
+  height: 270px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+}
+.popup-photo-profile__title {
+  font-size: 24px;
+  font-weight: 900;
+  padding-top: 30px;
+}
+.popup-trash__container {
+  background-color: white;
+  width: 430px;
+  height: 160px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+}
+.popup-trash__title {
+  font-size: 24px;
+  font-weight: 900;
+  padding-top: 30px;
+}
+.popup-trash__button {
+  margin-top: 2px;
+}
 
 @media screen and (max-width: 1000px) {
   .popup__close {
@@ -200,6 +231,10 @@
   }
   .popup-image__container {
     width: 240px;
+    top: 25%;
+  }
+  .popup__close-image {
+    top: 140px;
   }
   .popup-image__zoom {
     width: 240px;
@@ -207,5 +242,12 @@
   }
   .popup-image__name {
     right: 50px;
+  }
+  .popup-photo-profile__container {
+    width: 290px;
+    height: 280px;
+  }
+  .popup-trash__container {
+    width: 270px;
   }
 }

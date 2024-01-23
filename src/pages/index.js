@@ -5,18 +5,20 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-import { initialCards } from "../components/utils.js";
+import Api from "../components/API.js";
 import {
   popupName,
   popupDescription,
   popup,
   popupAdd,
   buttonAdd,
-  popupButtonAdd,
   imgZoom,
   popupImgName,
   editPopup,
   selectors,
+  profilePhoto,
+  popupProfileImage,
+  popupInputPhotoProfile,
 } from "../components/utils.js";
 
 const popupWithImage = new PopupWithImage(
@@ -26,26 +28,73 @@ const popupWithImage = new PopupWithImage(
 );
 popupWithImage.setEventListeners();
 
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const card = new Card(item, "#template-card", popupWithImage);
-      const cardElement = card.generateCard();
-      cardList.addItem(cardElement);
-    },
-  },
-  ".elements__list"
-);
-
-cardList.renderer();
-
 const userInfo = new UserInfo(selectors);
+
+export const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_ptbr_08",
+  headers: {
+    authorization: "b469dc0c-ae24-443f-a0e8-f771ca7b4117",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getInitialCards()
+  .then((result) => {
+    const cardList = new Section(
+      {
+        items: result,
+        renderer: (item) => {
+          const card = new Card(item, "#template-card", popupWithImage);
+          const cardElement = card.generateCard();
+          cardList.addItem(cardElement);
+        },
+      },
+      ".elements__list"
+    );
+    cardList.renderer();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+const popupAddForm = new PopupWithForm({
+  popupSelector: ".popup-add",
+  callBack: () => {
+    api
+      .addCard({
+        name: document.querySelector(".popup-add__input-title").value,
+        link: document.querySelector(".popup-add__input-link").value,
+      })
+      .then((result) => {
+        const card = new Card(result, "#template-card", popupWithImage);
+        const cardElement = card.generateCard();
+        document.querySelector(".elements__list").prepend(cardElement);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+});
+
+popupAddForm.setEventListeners();
+buttonAdd.addEventListener("click", () => {
+  popupAddForm.open();
+});
+
+api
+  .getUserInfo()
+  .then(({ name, about, avatar }) => {
+    userInfo.setUserInfo(name, about, avatar);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const popupProfile = new PopupWithForm({
   popupSelector: ".popup",
   callBack: () => {
-    userInfo.setUserInfo(popupName, popupDescription);
+    api.editUserInfo(popupName, popupDescription);
   },
 });
 popupProfile.setEventListeners();
@@ -57,25 +106,19 @@ editPopup.addEventListener("click", () => {
   popupProfile.open();
 });
 
-const popupAddForm = new PopupWithForm({
-  popupSelector: ".popup-add",
-  callBack: () => {
-    const dataCard = {
-      text: document.querySelector(".popup-add__input-title").value,
-      image: document.querySelector(".popup-add__input-link").value,
-    };
-    if (dataCard.text || dataCard.image === "") {
-      popupButtonAdd.classList.add("popup__button_inactive");
-      popupButtonAdd.disabled = true;
-    }
-    const card = new Card(dataCard, "#template-card", popupWithImage);
-    const cardElement = card.generateCard();
-    document.querySelector(".elements__list").prepend(cardElement);
+const avatarPopup = new PopupWithForm({
+  popupSelector: ".popup-photo-profile",
+  callBack: ({ avatar }) => {
+    api.editAvatar({
+      avatar: popupInputPhotoProfile.value,
+    });
+    userInfo.setUserInfo(avatar);
   },
 });
-popupAddForm.setEventListeners();
-buttonAdd.addEventListener("click", () => {
-  popupAddForm.open();
+avatarPopup.setEventListeners();
+
+profilePhoto.addEventListener("click", () => {
+  avatarPopup.open();
 });
 
 const config = {
@@ -92,3 +135,6 @@ form.enableValidation();
 
 const formAdd = new FormValidator(config, popupAdd);
 formAdd.enableValidation();
+
+const formProfile = new FormValidator(config, popupProfileImage);
+formProfile.enableValidation();
