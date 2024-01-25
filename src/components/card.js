@@ -1,8 +1,7 @@
-import PopupWithConfirmation from "./PopupWithConfirmation";
 import { api } from "../pages/index";
 
 export default class Card {
-  constructor(data, cardSelector, popupWithImage) {
+  constructor(data, cardSelector, popupWithImage, popupWithConfirmation) {
     this._text = data.name;
     this._image = data.link;
     this.owner = data.owner._id;
@@ -10,6 +9,7 @@ export default class Card {
     this._likes = data.likes;
     this._cardSelector = cardSelector;
     this._popupWithImage = popupWithImage;
+    this._popupWithConfirmation = popupWithConfirmation;
   }
 
   _getTemplate() {
@@ -26,17 +26,14 @@ export default class Card {
     this._element.querySelector(".elements__title").textContent = this._text;
     this._element.querySelector(".elements__number-likes").textContent =
       this._likes.length;
+    this._elementTrash = this._element.querySelector(".elements__card");
+
     return this._element;
   }
 
   isLiked() {
     const myId = "8558a0b313baa67f031edaec";
-    for (let i = 0; i < this._likes.length; i++) {
-      if (this._likes[i]._id === myId) {
-        return true;
-      }
-    }
-    return false;
+    return this._likes.find((res) => res._id === myId);
   }
 
   _like() {
@@ -44,10 +41,8 @@ export default class Card {
     const numberLikes = this._element.querySelector(".elements__number-likes");
     const myId = "8558a0b313baa67f031edaec";
 
-    for (let i = 0; i < this._likes.length; i++) {
-      if (this._likes[i]._id === myId) {
-        buttonLike.classList.add("elements__button-like_click");
-      }
+    if (this._likes.find((res) => res._id === myId)) {
+      buttonLike.classList.add("elements__button-like_click");
     }
 
     const liked = () => {
@@ -68,27 +63,23 @@ export default class Card {
     buttonLike.addEventListener("click", liked);
   }
 
+  removed() {
+    api
+      .removeCard(this._cardId)
+      .then(() => {
+        this._elementTrash.remove();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   _trash() {
     if (this.owner === "8558a0b313baa67f031edaec") {
       const elementTrash = this._element.querySelector(".elements__trash");
-      const popupDelete = new PopupWithConfirmation({
-        popupSelector: ".popup-trash",
-        callBack: () => {
-          api
-            .removeCard(this._cardId)
-            .then(() => {
-              const removeElement = elementTrash.closest(".elements__card");
-              removeElement.remove();
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        },
-      });
-
       elementTrash.addEventListener("click", () => {
-        popupDelete.open();
-        popupDelete.setEventListeners();
+        this._popupWithConfirmation.open();
+        this._popupWithConfirmation.setEventListeners();
       });
     } else {
       this._element
@@ -100,7 +91,6 @@ export default class Card {
   _setEventListener() {
     this._like();
     this._trash();
-
     this._element
       .querySelector(".elements__image")
       .addEventListener("click", () => {

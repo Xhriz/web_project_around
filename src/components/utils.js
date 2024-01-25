@@ -18,7 +18,6 @@ export const popupImgName = popupImage.querySelector(".popup-image__name");
 export const popupButtonAdd = popupAdd.querySelector(".popup-add__button");
 export const profilePhoto = profile.querySelector(".profile__photo");
 export const popupProfileImage = document.querySelector(".popup-photo-profile");
-export const elementTrash = document.querySelector(".elements__trash");
 export const popupTrash = document.querySelector(".popup-trash");
 export const popupInputPhotoProfile = document.querySelector(
   ".popup-photo-profile__input-link"

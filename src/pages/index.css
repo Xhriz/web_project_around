@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../styles/globals.css);
+@import url(../styles/blocks/globals.css);
 @import url(../font/inter.css);
 @import url(../styles/blocks/popup.css);
 @import url(../styles/blocks/header.css);

@@ -94,16 +94,17 @@
 }
 .popup-image__container {
   text-align: center;
+  align-items: center;
   margin: 0 auto;
   position: relative;
-  top: 11%;
+  top: 7%;
   width: 600px;
   overflow: hidden;
 }
 .popup__close-image {
   position: absolute;
   left: 75%;
-  top: 60px;
+  top: 30px;
 }
 .popup-image__name {
   color: white;
